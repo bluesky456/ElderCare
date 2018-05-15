@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="widget_label_height_size">44dp</dimen>
+    <dimen name="editText_font_size">20sp</dimen>
+    <dimen name="textView_font_size">18sp</dimen>
+    <dimen name="button_font_size">24sp</dimen>
+    <dimen name="code_button_font_size">20sp</dimen>
+    <dimen name="settings_font_size">20sp</dimen>
+    <dimen name="topbar_title_font_size">24sp</dimen>
+    
+    <dimen name="editText_height">44dp</dimen>
+    <dimen name="bottom_bar_height">64dp</dimen>
+    <dimen name="sub_menu_height">64dp</dimen>
+    <dimen name="item_menu_font_size">20sp</dimen>
+    
+    
+
+</resources>

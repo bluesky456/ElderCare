@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:snser="http://schemas.android.com/apk/res/com.ovvi.remotelocation"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context="${relativePackage}.${activityClass}" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal" >
+
+        <com.ovvi.remotelocation.widget.ImageViewPlus
+            android:id="@+id/popup_icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/people_icon"
+            snser:borderColor="#FF0080FF"
+            snser:borderWidth="2dp"
+            snser:type="circle" />
+
+        <TextView
+            android:id="@+id/people_name"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/popup_icon"
+            android:textSize="18sp" />
+
+        <com.ovvi.remotelocation.widget.ImageViewPlus
+            android:id="@+id/item_select"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/icon_unselect"
+            android:layout_marginRight="10dp"
+            snser:type="circle" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#d4d4d4" />
+
+</LinearLayout>

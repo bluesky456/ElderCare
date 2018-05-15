@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dip"
+        android:paddingLeft="10dip"
+        android:paddingRight="10dip"
+        android:background="#ffffffff" 
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/style_title_tips_add_family"
+            android:layout_centerInParent="true"
+            android:text="@string/title_tips_add_family" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="340dip"
+        android:layout_height="0.5dip"
+        android:layout_gravity="center"
+        android:paddingTop="5dip"
+        android:paddingBottom="5dip"
+        android:background="#ffececec" />
+
+    <ListView
+        android:id="@+id/notice_lv"
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:layout_weight="1.0"
+        android:background="#ffffffff"
+        android:divider="#ffececec"
+        android:dividerHeight="0.5dip"
+        android:paddingLeft="10dip"
+        android:paddingRight="10dip" />
+
+    <LinearLayout
+        android:id="@+id/layout_confirm"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bottom_button"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="gone"
+        android:gravity="center"
+        android:minHeight="55dip" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/confirm"
+            android:textColor="#ffffffff"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+</LinearLayout>

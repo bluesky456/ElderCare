@@ -1,0 +1,53 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="style_title_tips_add_family">
+        <item name="android:text">@string/title_tips_add_family</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#ff000000</item>
+    </style>
+
+    <style name="style_listitem_agree_btn">
+        <item name="android:text">@string/str_agree</item>
+        <item name="android:textSize">58px</item>
+        <item name="android:textColor">#ff000000</item>
+    </style>
+
+    <style name="style_listitem_refuse_btn">
+        <item name="android:text">@string/str_refuse</item>
+        <item name="android:textSize">58px</item>
+        <item name="android:textColor">#ff000000</item>
+    </style>
+
+    <style name="style_listitem_title_tv">
+        <item name="android:textSize">58px</item>
+        <item name="android:textColor">#ff000000</item>
+    </style>
+
+    <style name="style_unread_notice_tv">
+        <item name="android:text">99+</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">#ff000000</item>
+    </style>
+
+    <style name="style_nick_name_tv">
+        <item name="android:text">@string/str_nick_name</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">#ff606062</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="style_account_tv">
+        <item name="android:text">@string/str_account</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">#ff606062</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="style_network_tips_tv">
+        <item name="android:text">@string/str_network_tips</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#ff606062</item>
+        <item name="android:textStyle">italic</item>
+    </style>
+
+</resources>

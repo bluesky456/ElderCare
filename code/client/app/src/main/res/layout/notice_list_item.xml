@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="128px"
+    android:descendantFocusability="blocksDescendants" >
+
+    <ImageView
+        android:id="@+id/notice_listitem_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/notice_listitem_title_tv"
+        android:layout_width="200dip"
+        android:layout_height="wrap_content"
+        style="@style/style_listitem_title_tv"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="5dip"
+        android:layout_toRightOf="@id/notice_listitem_iv"
+        android:ellipsize="marquee"
+        android:singleLine="true"/>
+
+
+    <Button
+        android:id="@+id/notice_listitem_refuse_btn"
+        style="@style/style_listitem_refuse_btn"
+        android:layout_centerVertical="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignWithParentIfMissing="true"
+        android:background="@drawable/bg_button_red" />
+    <Button
+        android:id="@+id/notice_listitem_agree_btn"
+        style="@style/style_listitem_agree_btn"
+        android:layout_centerVertical="true"
+        android:layout_alignWithParentIfMissing="true"
+        android:layout_toLeftOf="@id/notice_listitem_refuse_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_button_green" />
+
+</RelativeLayout>

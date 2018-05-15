@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+	xmlns:lang="http://www.springframework.org/schema/lang" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:oxm="http://www.springframework.org/schema/oxm"
+	xsi:schemaLocation="http://www.springframework.org/schema/oxm http://www.springframework.org/schema/oxm/spring-oxm-4.2.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
+		http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-4.2.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd
+		http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa-1.8.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.2.xsd">
+
+	<!-- scan the package and the sub package -->
+	<context:component-scan base-package="com.ovvi.api"></context:component-scan>
+	<!-- don't handle the static resource -->
+	<mvc:default-servlet-handler />
+	<mvc:resources mapping="/static/**" location="/static/" />
+
+	<!-- if you use annotation you must configure following setting -->
+	<mvc:annotation-driven>
+		<!-- 处理responseBody 里面日期类型 -->
+		<mvc:message-converters>
+			<bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+				<property name="objectMapper">
+					<bean class="com.fasterxml.jackson.databind.ObjectMapper">
+						<property name="dateFormat">
+							<bean class="java.text.SimpleDateFormat">
+								<!-- 如果有特殊需要可以在字段上加上注解：@JsonFormat(pattern="yyyy-MM-dd",timezone = "GMT+8") -->
+								<constructor-arg type="java.lang.String" value="yyyy-MM-dd HH:mm:ss" />
+							</bean>
+						</property>
+					</bean>
+				</property>
+			</bean>
+		</mvc:message-converters>
+	</mvc:annotation-driven>
+
+
+	<!-- 登录信息拦截器 -->
+	<!-- <mvc:interceptors> <mvc:interceptor> <mvc:mapping path="/**" /> <mvc:exclude-mapping path="/loginout" /> <bean class="com.web.interceptor.LoginInterceptor" 
+		/> </mvc:interceptor> <mvc:interceptor> <mvc:mapping path="/*/*" /> <mvc:exclude-mapping path="/*" /> <mvc:exclude-mapping path="/loginout" /> <mvc:exclude-mapping 
+		path="/login" /> <mvc:exclude-mapping path="/main" /> <mvc:exclude-mapping path="/home" /> <mvc:exclude-mapping path="/nopermission" /> <mvc:exclude-mapping 
+		path="/error" /> <mvc:exclude-mapping path="/404" /> <mvc:exclude-mapping path="/upload" /> <mvc:exclude-mapping path="/uploadApk" /> <bean class="com.web.interceptor.PermissionInterceptor" 
+		/> </mvc:interceptor> </mvc:interceptors> -->
+
+	<!-- configure the InternalResourceViewResolver -->
+	<bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/jsp/"/> 
+	    <property name="suffix" value=".jsp" />
+	</bean>
+
+	<!-- upload settings -->
+	<!-- <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"> 200M <property name="maxUploadSize" value="209715200" 
+		/> </bean> -->
+
+	<!-- dozer对象转换工具 -->
+	<bean id="baseMapper" class="org.dozer.spring.DozerBeanMapperFactoryBean">
+		<property name="mappingFiles" value="WEB-INF/config/dozer-mapping.xml" />
+	</bean>
+	<!-- spring 上下文容器 -->
+	<bean class="com.ovvi.api.utils.SpringContextUtil" />
+	<!-- <bean class="com.web.init.PermissionInit" init-method="init" /> -->
+
+	<!-- 验证框架 <mvc:annotation-driven validator="validator" /> -->
+	<!-- 以下 validator ConversionService 在使用 mvc:annotation-driven 会 自动注册 -->
+	<bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
+		<property name="providerClass" value="org.hibernate.validator.HibernateValidator" />
+		<!-- 如果不加默认到 使用classpath下的 ValidationMessages.properties -->
+		<property name="validationMessageSource" ref="messageSource" />
+	</bean>
+	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="basenames">
+			<list>
+				<!-- 在web环境中一定要定位到classpath 否则默认到当前web应用下找 -->
+				<!-- <value>classpath:messages</value> -->
+				<value>classpath:org/hibernate/validator/ValidationMessages</value>
+			</list>
+		</property>
+		<property name="useCodeAsDefaultMessage" value="false" />
+		<property name="defaultEncoding" value="UTF-8" />
+		<!-- <property name="cacheSeconds" value="60" /> -->
+	</bean>
+
+<!-- 	<bean id="securityPropertiesPersister" class="com.ovvi.api.plugin.SecurityPropertiesPersister">
+		<property name="match">
+			<list>
+				<value>jdbc.username</value> 
+				<value>jdbc.password</value>
+			</list>
+		</property>
+	</bean>
+	<bean class="org.springframework.beans.factory.config.PreferencesPlaceholderConfigurer">
+		<property name="locations" value="WEB-INF/config/*.properties" />
+		<property name="propertiesPersister" ref="securityPropertiesPersister" />
+		<property name="ignoreResourceNotFound" value="true" />
+	</bean> -->
+	
+</beans>

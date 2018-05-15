@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <!-- Title -->
+
+    <include layout="@layout/layout_titlebar" />
+
+    <TextView
+        android:id="@+id/network_tips_tv"
+        style="@style/style_network_tips_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffdada"
+        android:drawableLeft="@drawable/network_err"
+        android:drawablePadding="10dip"
+        android:gravity="center_vertical"
+        android:paddingBottom="4dip"
+        android:paddingLeft="10dip"
+        android:paddingTop="4dip"
+        android:visibility="visible" />
+
+    <FrameLayout
+        android:id="@+id/layout_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fff" >
+    </FrameLayout>
+
+</LinearLayout>

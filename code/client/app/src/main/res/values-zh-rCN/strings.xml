@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- <string name="app_name">Real time tracking</string>
+    <string name="dialog_alert_title">提示</string>
+    <string name="register_text">注册</string>
+    <string name="login_text">登录</string>
+    <string name="telephone">手机号码</string>
+    <string name="password">输入密码</string>
+    <string name="forgot_password">忘记密码 ?</string>
+     <string name="verify_code">验证码</string> -->
+    
+    <!-- <string name="location_storage_permission_deny">权限被拒绝，你可以依次选择“设置”->“应用”来更改权限</string> -->
+
+</resources>

@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<project name="CareElder" basedir="." default="dist">
+  <!-- set properties name -->
+  <property name="build.dir" value="./build" />
+  <property name="src.dir" value="src" />
+  <property name="compile.dir" value="./compile" />
+  <property name="webRoot.dir" value="WebContent" />
+  <property name="web-inf.dir" value="./WEB-INF" />
+  <property name="classes.dir" value="./WEB-INF/classes" />
+  
+  <target name="clean">
+    <delete dir="${build.dir}" />
+  </target>
+ 
+  <target name="init">
+    <echo message ="创建相关目录"/>
+    <mkdir dir="${build.dir}" />
+    <mkdir dir="${build.dir}/${compile.dir}" />
+    <mkdir dir="${build.dir}/${web-inf.dir}" />
+    <mkdir dir="${build.dir}/${classes.dir}" />
+  </target>
+
+  <path id="classpath">
+    <fileset dir="${webRoot.dir}/WEB-INF/lib">
+      <include name="**/*.jar" />
+    </fileset>
+    <pathelement location="${build.dir}/WEB-INF/classes" />
+  </path>
+
+  <target name="compile">
+    <echo message ="编译程序to ${build.dir}/${compile.dir}"/>
+    <javac encoding="utf-8" srcdir="${src.dir}" destdir="${build.dir}/${compile.dir}" classpathref="classpath" includeantruntime="on" debug="true"/>
+    <echo message ="将配置文件复制到${build.dir}/${classes.dir}"/>
+	<copy todir="${build.dir}/${classes.dir}">	  
+      <fileset dir="${src.dir}">
+        <include name="**/*.xml" />
+        <include name="**/*.properties" />
+		<include name="**/*.lib" />
+				<include name="**/*.dat" />
+				<include name="**/*.txt" />
+      </fileset>
+      <fileset dir="${build.dir}/${compile.dir}">
+        <include name="**/**" />
+      </fileset>
+    </copy>
+    <copy todir="${build.dir}">
+      <fileset dir="${webRoot.dir}">
+        <include name="**/**" />
+      </fileset>
+    </copy>
+  </target> 
+  
+  <target name="jar" depends="compile">
+  	<delete dir="${build.dir}/${compile.dir}" />
+    <echo message ="将src下java文件打成jar包"/>
+    <jar destfile="${build.dir}/${web-inf.dir}/lib/000_advertmsg.jar" basedir="${build.dir}/${compile.dir}"></jar>
+ </target>
+    <target name="main" depends="clean,init,compile" />
+  <target name="dist" depends="main" description="将工程打成war包">
+  	<tstamp>
+	    <format property="TODAY" pattern="yyyyMMdd-HHmmss" locale="US"/>
+		</tstamp>
+    <echo>${TODAY}</echo>
+    
+  	<delete dir="${build.dir}/${compile.dir}" />  	  	<delete dir="${build.dir}/${web-inf.dir}/lib" />
+		<war destfile="War_Bak/${ant.project.name}_${TODAY}.war" basedir="${build.dir}" webxml="${build.dir}/${web-inf.dir}/web.xml" />
+		<war destfile="${ant.project.name}.war" basedir="${build.dir}" webxml="${build.dir}/${web-inf.dir}/web.xml" />
+		<delete dir="${build.dir}" />
+		<echo message ="打包完成"/>
+  </target> 
+
+  
+</project>

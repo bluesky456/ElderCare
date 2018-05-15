@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/dialog_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/dialog_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:gravity="left"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:textColor="#666666"
+            android:textSize="20sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginTop="30dp"
+            android:background="#d4d4d4" />
+
+        <LinearLayout
+            android:layout_width="320dp"
+            android:layout_height="48dp"
+            android:background="#f7f7fa"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/dialog_left"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:gravity="center_horizontal|center_vertical"
+                android:onClick="true"
+                android:textColor="#afbed2"
+                android:textSize="20sp" />
+
+            <View
+                android:layout_width="1px"
+                android:layout_height="48dp"
+                android:background="#d4d4d4" />
+
+            <TextView
+                android:id="@+id/dialog_right"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:gravity="center_horizontal|center_vertical"
+                android:onClick="true"
+                android:textColor="#05a5f1"
+                android:textSize="20sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

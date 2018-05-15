@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:snser="http://schemas.android.com/apk/res/com.ovvi.remotelocation"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:context="${relativePackage}.${activityClass}" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:orientation="horizontal" >
+
+            <com.ovvi.remotelocation.widget.ImageViewPlus
+                android:id="@+id/people_icon"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/main_icon"
+                snser:borderColor="#FF0080FF"
+                snser:borderWidth="4dp"
+                snser:type="circle" />
+            
+            <TextView
+                android:id="@+id/new_notice"
+                style="@style/style_unread_notice_tv"
+                android:layout_toRightOf="@id/people_icon"
+                android:layout_marginLeft="-30dp"
+                android:layout_marginTop="5dp"
+                android:clickable="true"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/shape_circular_red"
+                android:gravity="center"/>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/add_toast"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="18dp"
+            android:layout_marginTop="56dp"
+            android:text="@string/add_family_member_toast"
+            android:textColor="#aeaeae"
+            android:textSize="20sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/main_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:gravity="center_vertical|center_horizontal"
+            android:textSize="24sp"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/main_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="18dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical|center_horizontal"
+            android:textSize="20sp"
+            android:visibility="visible" />
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/menu_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="18dp"
+        android:layout_marginRight="18dp"
+        android:orientation="vertical"
+        android:visibility="visible" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:id="@+id/menu_remote"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/sub_menu_height"
+                android:orientation="horizontal" >
+
+                <com.ovvi.remotelocation.widget.ImageViewPlus
+                    android:id="@+id/menu_remote_id"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/sub_menu_romote"
+                    snser:borderColor="#FF0080FF"
+                    snser:borderWidth="2dp"
+                    snser:type="circle" />
+
+                <TextView
+                    android:id="@+id/remote_textView"
+                    style="@style/TextViewStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_toRightOf="@id/menu_remote_id"
+                    android:text="@string/remote_text"
+                    android:textSize="@dimen/item_menu_font_size" />
+
+                <TextView
+                    style="@style/TextViewStyle"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/ic_more" />
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#d4d4d4" />
+
+            <RelativeLayout
+                android:id="@+id/menu_track"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/sub_menu_height"
+                android:orientation="horizontal" >
+
+                <com.ovvi.remotelocation.widget.ImageViewPlus
+                    android:id="@+id/menu_track_id"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/sub_menu_track"
+                    snser:borderColor="#FF0080FF"
+                    snser:borderWidth="2dp"
+                    snser:type="circle" />
+
+                <TextView
+                    style="@style/TextViewStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_toRightOf="@id/menu_track_id"
+                    android:text="@string/track_text"
+                    android:textSize="@dimen/item_menu_font_size" />
+
+                <TextView
+                    style="@style/TextViewStyle"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/ic_more" />
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/fence_line"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#d4d4d4" />
+
+            <RelativeLayout
+                android:id="@+id/menu_fence"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/sub_menu_height"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp" >
+
+                <com.ovvi.remotelocation.widget.ImageViewPlus
+                    android:id="@+id/menu_fence_id"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/sub_menu_fence"
+                    snser:borderColor="#FF0080FF"
+                    snser:borderWidth="2dp"
+                    snser:type="circle" />
+
+                <TextView
+                    style="@style/TextViewStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_toRightOf="@id/menu_fence_id"
+                    android:text="@string/fence_text"
+                    android:textSize="@dimen/item_menu_font_size" />
+
+                <TextView
+                    style="@style/TextViewStyle"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/ic_more" />
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#d4d4d4" />
+
+            <RelativeLayout
+                android:id="@+id/menu_home"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/sub_menu_height"
+                android:orientation="horizontal" >
+
+                <com.ovvi.remotelocation.widget.ImageViewPlus
+                    android:id="@+id/menu_home_id"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/sub_menu_house"
+                    snser:borderColor="#FF0080FF"
+                    snser:borderWidth="2dp"
+                    snser:type="circle" />
+
+                <TextView
+                    style="@style/TextViewStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="16dp"
+                    android:layout_toRightOf="@id/menu_home_id"
+                    android:text="@string/house_text"
+                    android:textSize="@dimen/item_menu_font_size" />
+
+                <TextView
+                    style="@style/TextViewStyle"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/ic_more" />
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/home_line"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#d4d4d4" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

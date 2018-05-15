@@ -1,0 +1,63 @@
+ECLIPSE ANDROID PROJECT IMPORT SUMMARY
+======================================
+
+Ignored Files:
+--------------
+The following files were *not* copied into the new Gradle project; you
+should evaluate whether these are still needed in your project and if
+so manually move them:
+
+* ic_launcher-web.png
+* lib\
+* lib\BaiduLBS_Android.jar
+* lib\android-support-v4.jar
+* lib\gson-2.8.0.jar
+* lib\jasypt-1.9.2.jar
+* lib\okhttp-3.9.0.jar
+* lib\okio-1.9.0.jar
+* proguard-project.txt
+
+Moved Files:
+------------
+Android Gradle projects use a different directory structure than ADT
+Eclipse projects. Here's how the projects were restructured:
+
+* AndroidManifest.xml => app\src\main\AndroidManifest.xml
+* libs\arm64-v8a\libBaiduMapSDK_base_v4_5_2.so => app\src\main\jniLibs\arm64-v8a\libBaiduMapSDK_base_v4_5_2.so
+* libs\arm64-v8a\libBaiduMapSDK_bikenavi_v4_5_2.so => app\src\main\jniLibs\arm64-v8a\libBaiduMapSDK_bikenavi_v4_5_2.so
+* libs\arm64-v8a\libBaiduMapSDK_map_for_bikenavi_v4_5_2.so => app\src\main\jniLibs\arm64-v8a\libBaiduMapSDK_map_for_bikenavi_v4_5_2.so
+* libs\arm64-v8a\libBaiduTraceSDK_v3_0_7.so => app\src\main\jniLibs\arm64-v8a\libBaiduTraceSDK_v3_0_7.so
+* libs\arm64-v8a\libindoor.so => app\src\main\jniLibs\arm64-v8a\libindoor.so
+* libs\arm64-v8a\liblocSDK7b.so => app\src\main\jniLibs\arm64-v8a\liblocSDK7b.so
+* libs\armeabi-v7a\libBaiduMapSDK_base_v4_5_2.so => app\src\main\jniLibs\armeabi-v7a\libBaiduMapSDK_base_v4_5_2.so
+* libs\armeabi-v7a\libBaiduMapSDK_bikenavi_v4_5_2.so => app\src\main\jniLibs\armeabi-v7a\libBaiduMapSDK_bikenavi_v4_5_2.so
+* libs\armeabi-v7a\libBaiduMapSDK_map_for_bikenavi_v4_5_2.so => app\src\main\jniLibs\armeabi-v7a\libBaiduMapSDK_map_for_bikenavi_v4_5_2.so
+* libs\armeabi-v7a\libBaiduTraceSDK_v3_0_7.so => app\src\main\jniLibs\armeabi-v7a\libBaiduTraceSDK_v3_0_7.so
+* libs\armeabi-v7a\libindoor.so => app\src\main\jniLibs\armeabi-v7a\libindoor.so
+* libs\armeabi-v7a\liblocSDK7b.so => app\src\main\jniLibs\armeabi-v7a\liblocSDK7b.so
+* libs\armeabi\libBaiduMapSDK_base_v4_5_2.so => app\src\main\jniLibs\armeabi\libBaiduMapSDK_base_v4_5_2.so
+* libs\armeabi\libBaiduMapSDK_bikenavi_v4_5_2.so => app\src\main\jniLibs\armeabi\libBaiduMapSDK_bikenavi_v4_5_2.so
+* libs\armeabi\libBaiduMapSDK_map_for_bikenavi_v4_5_2.so => app\src\main\jniLibs\armeabi\libBaiduMapSDK_map_for_bikenavi_v4_5_2.so
+* libs\armeabi\libBaiduTraceSDK_v3_0_7.so => app\src\main\jniLibs\armeabi\libBaiduTraceSDK_v3_0_7.so
+* libs\armeabi\libindoor.so => app\src\main\jniLibs\armeabi\libindoor.so
+* libs\armeabi\liblocSDK7b.so => app\src\main\jniLibs\armeabi\liblocSDK7b.so
+* libs\BaiduLBS_Android.jar => app\libs\BaiduLBS_Android.jar
+* libs\BaiduTraceSDK_v3_0_7.jar => app\libs\BaiduTraceSDK_v3_0_7.jar
+* libs\IndoorscapeAlbumPlugin.jar => app\libs\IndoorscapeAlbumPlugin.jar
+* res\ => app\src\main\res\
+* src\ => app\src\main\java\
+
+Next Steps:
+-----------
+You can now build the project. The Gradle project needs network
+connectivity to download dependencies.
+
+Bugs:
+-----
+If for some reason your project does not build, and you determine that
+it is due to a bug or limitation of the Eclipse to Gradle importer,
+please file a bug at http://b.android.com with category
+Component-Tools.
+
+(This import summary is for your information only, and can be deleted
+after import once you are satisfied with the results.)

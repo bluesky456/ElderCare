@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="18dp"
+    android:layout_marginRight="18dp"
+    android:orientation="vertical" >
+
+    <EditText
+        android:id="@+id/member_edit"
+        style="@style/EditTextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/widget_label_height_size"
+        android:layout_marginTop="23dp"
+        android:background="@drawable/bg_edittext"
+        android:hint="@string/please_input_phone"
+        android:inputType="number"
+        android:maxLines="1"
+        android:paddingLeft="12dp"
+        android:singleLine="true" />
+
+    <EditText
+        android:id="@+id/add_member_name"
+        style="@style/EditTextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/widget_label_height_size"
+        android:layout_marginTop="23dp"
+        android:background="@drawable/bg_edittext"
+        android:hint="@string/please_input_name"
+        android:maxLines="1"
+        android:paddingLeft="12dp"
+        android:singleLine="true" />
+
+    <Button
+        android:id="@+id/member_add"
+        style="@style/ButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/widget_label_height_size"
+        android:layout_marginTop="23dp"
+        android:background="@drawable/bg_button"
+        android:gravity="center"
+        android:text="@string/member_text" />
+
+</LinearLayout>
